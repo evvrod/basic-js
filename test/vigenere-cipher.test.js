@@ -13,72 +13,72 @@ const _0x3a46 = ['random', 'length', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$()
 
 describe('Vigenere cipher', () => {
   // Presence requirement
-  // describe('variables presence', () => {
-  //   it.optional('class VigenereCipheringMachine exists', () => {
-  //     expect(VigenereCipheringMachine).to.exist;
-  //     expect(VigenereCipheringMachine).to.be.instanceOf(Function);
-  //   });
-  //   it.optional('correct inheritance', () => {
-  //     expect(new VigenereCipheringMachine()).to.be.an.instanceof(VigenereCipheringMachine);
-  //   });
-  //   it.optional('has methods', () => {
-  //     expect(new VigenereCipheringMachine()).to.respondTo('encrypt');
-  //     expect(new VigenereCipheringMachine()).to.respondTo('decrypt');
-  //     expect(new VigenereCipheringMachine(false)).to.respondTo('encrypt');
-  //     expect(new VigenereCipheringMachine(false)).to.respondTo('decrypt');
-  //   });
-  // });
-  // //Specific requirements
-  // describe('base requirements', () => {
-  //   const directMachine = new VigenereCipheringMachine();
-  //   const reverseMachine = new VigenereCipheringMachine(false);
+  describe('variables presence', () => {
+    it.optional('class VigenereCipheringMachine exists', () => {
+      expect(VigenereCipheringMachine).to.exist;
+      expect(VigenereCipheringMachine).to.be.instanceOf(Function);
+    });
+    it.optional('correct inheritance', () => {
+      expect(new VigenereCipheringMachine()).to.be.an.instanceof(VigenereCipheringMachine);
+    });
+    it.optional('has methods', () => {
+      expect(new VigenereCipheringMachine()).to.respondTo('encrypt');
+      expect(new VigenereCipheringMachine()).to.respondTo('decrypt');
+      expect(new VigenereCipheringMachine(false)).to.respondTo('encrypt');
+      expect(new VigenereCipheringMachine(false)).to.respondTo('decrypt');
+    });
+  });
+  //Specific requirements
+  describe('base requirements', () => {
+    const directMachine = new VigenereCipheringMachine();
+    const reverseMachine = new VigenereCipheringMachine(false);
 
-  //   it.optional('must throw an Error if no args', function () {
-  //     const res = checkForThrowingErrors.call(this, [
-  //       () => directMachine.encrypt('lala'),
-  //       () => directMachine.encrypt(undefined, 'key'),
-  //       () => directMachine.encrypt(),
-  //       () => reverseMachine.encrypt('lala'),
-  //       () => reverseMachine.encrypt(undefined, 'key'),
-  //       () => reverseMachine.encrypt(),
-  //       () => directMachine.decrypt('lala'),
-  //       () => directMachine.decrypt(undefined, 'key'),
-  //       () => directMachine.decrypt(),
-  //       () => reverseMachine.decrypt('lala'),
-  //       () => reverseMachine.decrypt(undefined, 'key'),
-  //       () => reverseMachine.decrypt()
-  //     ], 'Incorrect arguments!');
+    it.optional('must throw an Error if no args', function () {
+      const res = checkForThrowingErrors.call(this, [
+        () => directMachine.encrypt('lala'),
+        () => directMachine.encrypt(undefined, 'key'),
+        () => directMachine.encrypt(),
+        () => reverseMachine.encrypt('lala'),
+        () => reverseMachine.encrypt(undefined, 'key'),
+        () => reverseMachine.encrypt(),
+        () => directMachine.decrypt('lala'),
+        () => directMachine.decrypt(undefined, 'key'),
+        () => directMachine.decrypt(),
+        () => reverseMachine.decrypt('lala'),
+        () => reverseMachine.decrypt(undefined, 'key'),
+        () => reverseMachine.decrypt()
+      ], 'Incorrect arguments!');
 
-  //     assert.strictEqual(res.every($ => $ === CORRECT_RESULT_MSG), true);
-  //   });
+      assert.strictEqual(res.every($ => $ === CORRECT_RESULT_MSG), true);
+    });
 
-  //   it.optional('base encryption', () => {
-  //     assert.equal(directMachine.encrypt('attack at dawn!', 'alphonse'), 'AEIHQX SX DLLU!');
-  //     assert.equal(directMachine.encrypt('Example of sequence: 1, 2, 3, 4.', 'lilkey'), 'PFLWTJP WQ CIOFMYMI: 1, 2, 3, 4.');
-  //     assert.equal(directMachine.encrypt('cryptography', 'verylongkeyword'), 'XVPNECTXKTFU');
-  //     assert.equal(directMachine.encrypt('Samelengthkey', 'Samelengthkey'), 'KAYIWIAMMOUIW');
-  //     assert.equal(directMachine.encrypt('Same length key', 'Samelengthkey'), 'KAYI WIAMMO UIW');
-  //   });
-  //   it.optional('base decryption', () => {
-  //     assert.equal(directMachine.decrypt('UWJJW XAGWLNFM VNNNDXHVWWL :)', 'js'), 'LEARN FRONTEND DEVELOPMENT :)');
-  //     assert.equal(directMachine.decrypt('ICWWQAM KECEIK JVZZT EADGG!', 'rollingscopes'), 'ROLLING SCOPES SHOOL RULES!');
-  //     assert.equal(directMachine.decrypt('TRVVFB VT JSUIFMYL!', 'learning'), 'INVEST IN YOURSELF!');
-  //     assert.equal(directMachine.decrypt('HSVD AJAL ^^', 'behappy'), 'GOOD LUCK ^^');
-  //   });
-  // });
+    it.optional('base encryption', () => {
+      assert.equal(directMachine.encrypt('attack at dawn!', 'alphonse'), 'AEIHQX SX DLLU!');
+      assert.equal(directMachine.encrypt('Example of sequence: 1, 2, 3, 4.', 'lilkey'), 'PFLWTJP WQ CIOFMYMI: 1, 2, 3, 4.');
+      assert.equal(directMachine.encrypt('cryptography', 'verylongkeyword'), 'XVPNECTXKTFU');
+      assert.equal(directMachine.encrypt('Samelengthkey', 'Samelengthkey'), 'KAYIWIAMMOUIW');
+      assert.equal(directMachine.encrypt('Same length key', 'Samelengthkey'), 'KAYI WIAMMO UIW');
+    });
+    it.optional('base decryption', () => {
+      assert.equal(directMachine.decrypt('UWJJW XAGWLNFM VNNNDXHVWWL :)', 'js'), 'LEARN FRONTEND DEVELOPMENT :)');
+      assert.equal(directMachine.decrypt('ICWWQAM KECEIK JVZZT EADGG!', 'rollingscopes'), 'ROLLING SCOPES SHOOL RULES!');
+      assert.equal(directMachine.decrypt('TRVVFB VT JSUIFMYL!', 'learning'), 'INVEST IN YOURSELF!');
+      assert.equal(directMachine.decrypt('HSVD AJAL ^^', 'behappy'), 'GOOD LUCK ^^');
+    });
+  });
 
   describe('functional requirements', () => {
     const directMachine = new VigenereCipheringMachine();
     const reverseMachine = new VigenereCipheringMachine(false);
 
-    // it.optional('double-sided direct cryptography', () => {
-    //   for (let i = 2; i < 200; i += 1) {
-    //     const testStr = createTestString(i);
-    //     const testKey = createTestKey(i + i % 2);
-    //     const encrypted = directMachine.encrypt(testStr, testKey);
-    //     assert.equal(directMachine.decrypt(encrypted, testKey), testStr);
-    //   }
-    // });
+    it.optional('double-sided direct cryptography', () => {
+      for (let i = 2; i < 200; i += 1) {
+        const testStr = createTestString(i);
+        const testKey = createTestKey(i + i % 2);
+        const encrypted = directMachine.encrypt(testStr, testKey);
+        assert.equal(directMachine.decrypt(encrypted, testKey), testStr);
+      }
+    });
 
     it.optional('double-sided reverse cryptography 2', () => {
       for (let i = 2; i < 200; i += 1) {

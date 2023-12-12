@@ -25,7 +25,7 @@ class VigenereCipheringMachine {
     else { this.type = false; }
   }
   encrypt(message, key) {
-    if (arguments.length < 2) {
+    if (message === undefined || key === undefined) {
       throw new Error('Incorrect arguments!')
     }
     message = message.toLowerCase();
@@ -46,8 +46,7 @@ class VigenereCipheringMachine {
     return res.toUpperCase();
   }
   decrypt(message, key) {
-    console.log('decrypt' + message, key);
-    if (arguments.length < 2) {
+    if (message === undefined || key === undefined) {
       throw new Error('Incorrect arguments!')
     }
 
